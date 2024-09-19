@@ -28,5 +28,9 @@ def manage_users():
         # Lister tous les utilisateurs
         return jsonify(users), 200
 
+@app.route("/exemple_for_merge", methods = ['GET'])
+def exemple_for_merge():
+    return jsonify({'message': 'User added successfully!', 'user': "sidi"}), 201
+
 if __name__ == '__main__':
     app.run(debug=True)
