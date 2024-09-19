@@ -13,10 +13,13 @@ def index():
 def manage_users():
     if request.method == 'POST':
         # Ajouter un utilisateur
+        if 'email' not in request.json or request.json['email'] == '':
+            return jsonify({'error': 'Email is required!'}), 400
         user = {
             'name': request.json['name'],
             'email': request.json['email']
         }
+
         users.append(user)
         return jsonify({'message': 'User added successfully!', 'user': user}), 201
     else:
