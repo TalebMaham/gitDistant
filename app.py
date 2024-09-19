@@ -15,6 +15,8 @@ def manage_users():
         # Ajouter un utilisateur
         if 'email' not in request.json or request.json['email'] == '':
             return jsonify({'error': 'Email is required!'}), 400
+        if 'name' not in request.json or request.json['name'] == '':
+            return jsonify({'error': 'Name is required!'}), 400
         user = {
             'name': request.json['name'],
             'email': request.json['email']
