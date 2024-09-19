@@ -32,5 +32,9 @@ def manage_users():
 def exemple_for_merge():
     return jsonify({'message': 'User added successfully!', 'user': "sidi"}), 201
 
+@app.route("/feat_exemple2", methods = ['GET'])
+def feat_exemple2():
+    return jsonify({'message': 'feat_exemple2!', 'user': "sidi"}), 201
+
 if __name__ == '__main__':
     app.run(debug=True)
