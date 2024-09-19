@@ -35,6 +35,9 @@ def exemple_for_merge():
 @app.route("/feat_exemple2", methods = ['GET'])
 def feat_exemple2():
     return jsonify({'message': 'feat_exemple2!', 'user': "sidi"}), 201
+@app.route("/feat_exemple1", methods = ['GET'])
+def feat_exemple1():
+    return jsonify({'message': 'feat_exemple1 !', 'user': "sidi"}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
